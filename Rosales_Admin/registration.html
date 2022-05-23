@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>User Registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+    <body style="background-color: #ffffff;">
+      <nav class="navbar navbar-dark fixed-top flex-md-nowrap p-0 shadow" style="background-color: #88ac44;">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
+          <img src="">
+        </a>
+        <ul class="navbar-nav px-3">
+          <li class="nav-item text-nowrap">
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="container-fluid">
+        
+      <main role="main" class="col-md-9 w-100 p-10 ml-5">
+        <form class="ml-5 mr-1 mw-100 w-100 needs-validation" id="dvdForm" method="POST" enctype="multipart/form-data" autocomplete="off" >
+          <div class="form-row ">
+            <h2 class="mb-2 ">User Registration Form</h2>
+          </div>
+            
+          <div class="form-row ">
+            <div class="col-md-4 mb-3 mt-4">                                              
+              <div class="img-thumbnail img-circle">
+                <div style="position: relative; padding: 0; cursor: pointer;" >
+                  <img  class="img-circle profile-pic" src="{%static 'customer/images/profile.png' %}" style="width: 120px; height: 120px;  max-height: 1200px; border-color: white;" >
+                  <span class="imgthumb" style="position: absolute; ">  <i class="fa fa-camera upload-button"></i></span>
+                  <input name="profile_pic" class="file-upload" type="file" accept="image/*"/>
+                </div>
+              </div>
+            </div>
+          </div>
+                   
+          <div class="form-row">
+            <div class="col-md-4 mb-3 mt-2">      
+              <label for="validationDefault01">Date Registered</label>
+              <input type="Date" class="form-control"  id="DateField" name= "date_registered" required readonly="" />
+              <script type="text/javascript">
+                document.getElementById('DateField').valueAsDate = new Date();
+                console.log(new Date());
+              </script>
+            </div>
+          </div>
+            
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+            <label for="firstname">Firstname</label>
+            <input type="text" name ="firstname" class="form-control" id="Title" placeholder="Firstname" maxlength="100" required/>
+          </div>
+				
+          <div class="col-md-4 mb-3">
+            <label for="Middlename">Middlename</label>
+            <input type="text" name ="middlename" class="form-control" id="Middlename" placeholder="Middlename" maxlength="100" />
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <label for="Lastname">Lastname</label>
+            <input type="text" name ="lastname" class="form-control" id="Lastname" placeholder="Lastname" maxlength="100" />
+          </div>
+            
+          <div class="form-row">
+     			  <div class="col-md-4 mb-3 mt-2">
+              <label for="Lastname">Address</label>
+                <input type="text" name ="address" class="form-control" id="Address" placeholder="Street, Brgy, City, Prov, Zip, Country" maxlength="355" autocomplete="off" />
+            </div>
+              
+            <div class="col-md-4 mb-3 mt-2">
+              <label for="validationDefault01">Birth Date</label>
+              <input name="birthdate" type="Date" class="form-control" id="DateField" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-4 mb-3 mt-2">
+              <label for="validationDefault01">Gender</label>
+                <div class="form-group">
+                  <select  name="gender" class="custom-select" id="forgender" required>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                  </select>
+                <div class="invalid-feedback">Example invalid custom select feedback</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button class="btn btn-primary" id = "submit" type="submit">Add User</button>
+    </form>
+  </main>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+       <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/js/popper.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+       <script type="text/javascript" src="{% static 'js/dashboard/tools/functions.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/dashboard/tools/bootstrap-tagsinput.js' %}"></script>
+        <!-- Icons -->
+        <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+        <script>feather.replace()</script>
+
+
+        <script>
+
+   $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            function getCookie(name) {
+                var cookieValue = null;
+                if (document.cookie && document.cookie != '') {
+                    var cookies = document.cookie.split(';');
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = jQuery.trim(cookies[i]);
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+            if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+                // Only send the token to relative URLs i.e. locally.
+                xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+            }
+        }
+    });
+
+  </script>
+
+<script type="text/javascript">
+
+
+
+ $(document).ready(function() {
+
+
+        var readURL = function(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.profile-pic').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+        $(".file-upload").on('change', function(){
+            readURL(this);
+        });
+
+        $(".upload-button").on('click', function() {
+           $(".file-upload").click();
+        });
+});
+
+
+
+
+
+
+
+</script>
+
+    </body>
+</html>
